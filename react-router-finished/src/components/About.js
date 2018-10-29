@@ -1,13 +1,26 @@
 import React, {Component} from 'react'
+import {Switch, Route, Link} from 'react-router-dom'
+import Staff from './Staff'
+import History from './History'
+import AboutUs from './AboutUs'
 
 class About extends Component{
     render(){
         return (
             <div>
-                <h1>About</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis lectus nulla at volutpat diam. Eleifend quam adipiscing vitae proin sagittis nisl. Sed velit dignissim sodales ut eu sem integer vitae. Lacus luctus accumsan tortor posuere ac ut. Turpis nunc eget lorem dolor sed viverra ipsum nunc. </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis lectus nulla at volutpat diam. Eleifend quam adipiscing vitae proin sagittis nisl. Sed velit dignissim sodales ut eu sem integer vitae. Lacus luctus accumsan tortor posuere ac ut. Turpis nunc eget lorem dolor sed viverra ipsum nunc. </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis lectus nulla at volutpat diam. Eleifend quam adipiscing vitae proin sagittis nisl. Sed velit dignissim sodales ut eu sem integer vitae. Lacus luctus accumsan tortor posuere ac ut. Turpis nunc eget lorem dolor sed viverra ipsum nunc. </p>
+                <div>
+                    <h1>About</h1>
+                    <Link to="/about">About</Link>
+                    <Link to="/about/staff">Meet the Staff</Link>
+                    <Link to="/about/history">Our History</Link>
+                </div>
+                <div>
+                    <Switch>
+                        <Route exact path="/about" component={AboutUs}/>
+                        <Route path="/about/staff" component={Staff}/>
+                        <Route path="/about/history" component={History}/>
+                    </Switch>
+                </div>
             </div>
         )
     }
