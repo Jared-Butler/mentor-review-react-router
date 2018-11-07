@@ -6,7 +6,9 @@ import './App.css';
 class App extends Component {
 
   render() {
-    let superhero = "Thor"
+    
+    let superhero = "Star Lord"
+
     return (
       <div className="App">
         <nav>
